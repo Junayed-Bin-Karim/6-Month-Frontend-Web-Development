@@ -699,13 +699,18 @@ nav ul li a:hover {
   color: #999;
 }
 
-/* Responsive for smaller screens */
 @media (max-width: 768px) {
   .footer-content {
     flex-direction: column;
-    gap: 20px;
+    gap: 10px; /* গ্যাপ কমানো */
+  }
+
+  .footer-section {
+    min-width: 100%;  /* পুরো লাইন নিয়ে নেবে */
+    flex: none;       /* grow/shrink বন্ধ করে দেয় */
   }
 }
+
 
 
 
