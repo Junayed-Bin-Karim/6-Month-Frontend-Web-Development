@@ -572,27 +572,36 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-
-
-
 document.addEventListener('DOMContentLoaded', () => {
-    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-    const mobileMenu = document.querySelector('.mobile-menu');
-    const mobileMenuOverlay = document.querySelector('.mobile-menu-overlay');
-    const mobileMenuClose = document.querySelector('.mobile-menu-close');
+  const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+  const mobileMenu = document.querySelector('.mobile-menu');
+  const mobileMenuOverlay = document.querySelector('.mobile-menu-overlay');
 
-    function toggleMobileMenu() {
-        mobileMenuBtn.classList.toggle('active'); // toggle on button
-        mobileMenu.classList.toggle('active');
-        mobileMenuOverlay.classList.toggle('active');
-        document.body.classList.toggle('no-scroll');
-    }
+  function toggleMenu() {
+    mobileMenuBtn.classList.toggle('active');
+    mobileMenu.classList.toggle('active');
+    mobileMenuOverlay.classList.toggle('active');
+    document.body.classList.toggle('no-scroll');
+  }
 
-    mobileMenuBtn.addEventListener('click', toggleMobileMenu);
-    mobileMenuClose.addEventListener('click', toggleMobileMenu);
-    mobileMenuOverlay.addEventListener('click', toggleMobileMenu);
+  mobileMenuBtn.addEventListener('click', toggleMenu);
+  mobileMenuOverlay.addEventListener('click', toggleMenu);
 
-    document.querySelectorAll('.mobile-menu a').forEach(link => {
-        link.addEventListener('click', toggleMobileMenu);
+  // Optional: close menu when any link is clicked
+  document.querySelectorAll('.mobile-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+      // Only close if menu is open
+      if (mobileMenu.classList.contains('active')) {
+        toggleMenu();
+      }
     });
+  });
 });
+
+
+
+
+
+
+
+
