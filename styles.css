@@ -434,6 +434,31 @@ nav ul li a:hover {
 
 
 
+@media (max-width: 600px) {
+  .instructor-card {
+    flex-direction: column;
+    padding: 20px 15px;
+    max-width: 100%;
+    margin: 20px auto; /* centers horizontally */
+  }
+
+  .instructor-photo {
+    margin-right: 0;
+    margin-bottom: 20px;
+    width: 150px;
+    height: 150px;
+  }
+
+  .instructor-info {
+    min-width: auto;
+    text-align: center;
+  }
+
+  .linkedin-btn {
+    display: block;
+    margin: 0 auto;
+  }
+}
 
 
 
@@ -445,7 +470,7 @@ nav ul li a:hover {
 
 
 
-/* Mobile Menu Styles */
+/* Mobile Menu Styles hunmbager menu */
 .mobile-menu-btn {
     display: none;
     cursor: pointer;

@@ -575,27 +575,24 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
+document.addEventListener('DOMContentLoaded', () => {
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const mobileMenuOverlay = document.querySelector('.mobile-menu-overlay');
+    const mobileMenuClose = document.querySelector('.mobile-menu-close');
 
-// Mobile Menu Functionality
-const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-const hamburger = document.querySelector('.hamburger');
-const mobileMenu = document.querySelector('.mobile-menu');
-const mobileMenuOverlay = document.querySelector('.mobile-menu-overlay');
-const mobileMenuClose = document.querySelector('.mobile-menu-close');
+    function toggleMobileMenu() {
+        mobileMenuBtn.classList.toggle('active'); // toggle on button
+        mobileMenu.classList.toggle('active');
+        mobileMenuOverlay.classList.toggle('active');
+        document.body.classList.toggle('no-scroll');
+    }
 
-function toggleMobileMenu() {
-    hamburger.classList.toggle('active');
-    mobileMenu.classList.toggle('active');
-    mobileMenuOverlay.classList.toggle('active');
-    document.body.classList.toggle('no-scroll');
-}
+    mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+    mobileMenuClose.addEventListener('click', toggleMobileMenu);
+    mobileMenuOverlay.addEventListener('click', toggleMobileMenu);
 
-// Event Listeners
-mobileMenuBtn.addEventListener('click', toggleMobileMenu);
-mobileMenuClose.addEventListener('click', toggleMobileMenu);
-mobileMenuOverlay.addEventListener('click', toggleMobileMenu);
-
-// Close menu when clicking on a link
-document.querySelectorAll('.mobile-menu a').forEach(link => {
-    link.addEventListener('click', toggleMobileMenu);
+    document.querySelectorAll('.mobile-menu a').forEach(link => {
+        link.addEventListener('click', toggleMobileMenu);
+    });
 });
