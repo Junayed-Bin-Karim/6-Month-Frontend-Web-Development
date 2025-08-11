@@ -570,163 +570,122 @@ nav ul li a:hover {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Footer */
+/* General footer styling */
 .footer {
-    background-color: var(--dark-color);
-    color: white;
-    padding: 4rem 0 2rem;
+  background-color: #222; /* dark background */
+  color: #eee;            /* light text */
+  padding: 40px 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* Container centers and limits width */
+.footer .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Footer main content flex layout */
 .footer-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 3rem;
-    margin-bottom: 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
 }
 
+/* Each section in footer */
+.footer-section {
+  flex: 1 1 250px; /* grow and shrink with minimum width */
+  min-width: 250px;
+}
+
+/* Section headings */
 .footer-section h3 {
-    font-size: 1.25rem;
-    margin-bottom: 1.5rem;
-    font-family: var(--font-heading);
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #ff6f61; /* accent underline */
+  padding-bottom: 5px;
 }
 
+/* Paragraphs inside footer sections */
 .footer-section p {
-    margin-bottom: 1rem;
-    color: #94a3b8;
+  line-height: 1.6;
+  color: #ccc;
 }
 
+/* Lists styling */
 .footer-section ul {
-    list-style: none;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.footer-section li {
-    margin-bottom: 0.75rem;
+.footer-section ul li {
+  margin-bottom: 10px;
+  font-size: 0.9rem;
 }
 
-.footer-section a {
-    color: #94a3b8;
-    text-decoration: none;
-    transition: color 0.3s ease;
+/* Links inside footer */
+.footer-section ul li a {
+  color: #eee;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
-.footer-section a:hover {
-    color: white;
+.footer-section ul li a:hover {
+  color: #ff6f61;
 }
 
-.footer-section i {
-    margin-right: 0.5rem;
-    width: 20px;
-    text-align: center;
+/* Icons spacing */
+.footer-section ul li i {
+  margin-right: 8px;
+  color: #ff6f61;
 }
+
+/* Bottom footer */
+.footer-bottom {
+  margin-top: 30px;
+  border-top: 1px solid #444;
+  padding-top: 15px;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #999;
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+
+
+
+
 
 .footer-bottom {
-    text-align: center;
-    padding-top: 2rem;
-    border-top: 1px solid #334155;
-    color: #94a3b8;
+  text-align: left;
 }
 
-/* Responsive Styles */
-@media (max-width: 992px) {
-    .overview-content {
-        grid-template-columns: 1fr;
-    }
-    
-    .pricing-banner {
-        max-width: 400px;
-        margin: 0 auto;
-    }
-    
-    .instructor-profile {
-        grid-template-columns: 1fr;
-    }
-    
-    .instructor-image {
-        max-width: 300px;
-        margin: 0 auto;
-    }
+
+.footer-bottom {
+  text-align: left;
 }
 
 @media (max-width: 768px) {
-    .nav-links {
-        position: fixed;
-        top: 76px;
-        left: -100%;
-        width: 100%;
-        height: calc(100vh - 76px);
-        background-color: white;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 2rem;
-        transition: left 0.3s ease;
-    }
-    
-    .nav-links.active {
-        left: 0;
-    }
-    
-    .hamburger {
-        display: block;
-    }
-    
-    .hamburger.active .line:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
-    }
-    
-    .hamburger.active .line:nth-child(2) {
-        opacity: 0;
-    }
-    
-    .hamburger.active .line:nth-child(3) {
-        transform: rotate(-45deg) translate(7px, -6px);
-    }
-    
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-    
-    .cta-buttons {
-        flex-direction: column;
-    }
-    
-    .course-details {
-        grid-template-columns: 1fr;
-    }
+  .footer-bottom {
+    text-align: center;
+  }
 }
 
-@media (max-width: 576px) {
-    section {
-        padding: 3rem 0;
-    }
-    
-    .section-title {
-        font-size: 1.75rem;
-    }
-    
-    .hero h1 {
-        font-size: 2rem;
-    }
-    
-    .tagline {
-        font-size: 1.125rem;
-    }
-    
-    .current-price {
-        font-size: 2.5rem;
-    }
+
+
+.footer-bottom {
+  width: 100%; /* পুরো দৈর্ঘ্য নেবে */
+  text-align: left !important;
+  display: block;
 }
+
+
+
