@@ -737,3 +737,314 @@ nav ul li a:hover {
 
 
 
+
+
+
+
+
+
+
+
+
+
+.demo-class-section {
+  background-color: #222; /* dark background */
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+  font-family: var(--font-main);
+}
+
+.demo-class-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.demo-class-section p {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#demoClassForm {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+#demoClassForm input {
+  flex: 1 1 200px;
+  padding: 12px 15px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+#demoClassForm button {
+  background-color: #e74c3c; /* accent color */
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#demoClassForm button:hover {
+  background-color: #c0392b;
+}
+
+@media (max-width: 480px) {
+  #demoClassForm {
+    flex-direction: column;
+  }
+}
+@media (max-width: 768px) {
+  .demo-class-section {
+    padding: 40px 15px;
+  }
+
+  .demo-class-section h2 {
+    font-size: 2rem;
+  }
+
+  .demo-class-section p {
+    font-size: 1rem;
+    max-width: 90%;
+  }
+
+  #demoClassForm {
+    max-width: 100%;
+    gap: 12px;
+  }
+
+  #demoClassForm input {
+    flex: 1 1 100%;
+    font-size: 1rem;
+  }
+
+  #demoClassForm button {
+    width: 100%;
+    font-size: 1.1rem;
+    padding: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .demo-class-section {
+    padding: 30px 10px;
+  }
+
+  .demo-class-section h2 {
+    font-size: 1.6rem;
+  }
+
+  .demo-class-section p {
+    font-size: 0.9rem;
+  }
+
+  #demoClassForm input,
+  #demoClassForm button {
+    flex: 1 1 100%;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* General resets and fonts */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f9f9f9;
+  color: #222;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Section title and intro */
+.roadmap-section {
+  padding: 60px 15px 80px;
+  background: #fff;
+}
+
+.roadmap-section h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #1a1a1a;
+}
+
+.intro-text {
+  max-width: 700px;
+  margin: 0 auto 40px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  text-align: center;
+  color: #444;
+}
+
+/* Roadmap container */
+.roadmap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+/* Each step card */
+.roadmap-step {
+  background: #f0f4f8;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgb(0 0 0 / 0.1);
+  flex: 1 1 280px;
+  max-width: 320px;
+  padding: 25px 20px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+}
+
+.roadmap-step:hover {
+  transform: translateY(-5px);
+}
+
+/* Step header */
+.step-header {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.step-number {
+  background: #3b82f6; /* Blue */
+  color: white;
+  font-weight: 700;
+  font-size: 1.2rem;
+  display: inline-block;
+  padding: 8px 18px;
+  border-radius: 50px;
+  margin-bottom: 8px;
+  letter-spacing: 1.2px;
+}
+
+.step-header h3 {
+  font-size: 1.25rem;
+  color: #111;
+  margin: 0;
+  font-weight: 600;
+}
+
+/* Step content - list */
+.step-content ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.step-content ul li {
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 12px;
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.4;
+  display: flex;
+  align-items: center;
+}
+
+/* Icons */
+.step-content ul li i {
+  position: absolute;
+  left: 0;
+  color: #3b82f6;
+  font-size: 1.15rem;
+  min-width: 20px;
+  text-align: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .roadmap {
+    justify-content: center;
+  }
+
+  .roadmap-step {
+    max-width: 100%;
+    flex: 1 1 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .roadmap-section {
+    padding: 40px 10px 60px;
+  }
+
+  .roadmap-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .intro-text {
+    font-size: 1rem;
+  }
+
+  .step-number {
+    font-size: 1rem;
+    padding: 6px 14px;
+  }
+
+  .step-header h3 {
+    font-size: 1.1rem;
+  }
+
+  .step-content ul li {
+    font-size: 0.95rem;
+    padding-left: 26px;
+  }
+
+  .step-content ul li i {
+    font-size: 1rem;
+    min-width: 18px;
+  }
+}

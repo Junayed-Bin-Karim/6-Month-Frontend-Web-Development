@@ -565,38 +565,66 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
+// Mobile Menu Functionality
+const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+const mobileMenu = document.querySelector('.mobile-menu');
+const mobileMenuOverlay = document.querySelector('.mobile-menu-overlay');
+const body = document.body;
 
-
-
-
-
-
-
-document.addEventListener('DOMContentLoaded', () => {
-  const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-  const mobileMenu = document.querySelector('.mobile-menu');
-  const mobileMenuOverlay = document.querySelector('.mobile-menu-overlay');
-
-  function toggleMenu() {
-    mobileMenuBtn.classList.toggle('active');
+mobileMenuBtn.addEventListener('click', function() {
+    // Toggle mobile menu and overlay
     mobileMenu.classList.toggle('active');
     mobileMenuOverlay.classList.toggle('active');
-    document.body.classList.toggle('no-scroll');
-  }
-
-  mobileMenuBtn.addEventListener('click', toggleMenu);
-  mobileMenuOverlay.addEventListener('click', toggleMenu);
-
-  // Optional: close menu when any link is clicked
-  document.querySelectorAll('.mobile-menu a').forEach(link => {
-    link.addEventListener('click', () => {
-      // Only close if menu is open
-      if (mobileMenu.classList.contains('active')) {
-        toggleMenu();
-      }
-    });
-  });
+    body.classList.toggle('no-scroll');
+    
+    // Toggle hamburger animation
+    this.classList.toggle('active');
 });
+
+mobileMenuOverlay.addEventListener('click', function() {
+    // Close mobile menu when overlay is clicked
+    mobileMenu.classList.remove('active');
+    this.classList.remove('active');
+    body.classList.remove('no-scroll');
+    mobileMenuBtn.classList.remove('active');
+});
+
+// Close menu when clicking on a link
+document.querySelectorAll('.mobile-menu a').forEach(link => {
+    link.addEventListener('click', function() {
+        mobileMenu.classList.remove('active');
+        mobileMenuOverlay.classList.remove('active');
+        body.classList.remove('no-scroll');
+        mobileMenuBtn.classList.remove('active');
+    });
+});
+
+
+
+
+const form = document.getElementById('demoClassForm');
+
+form.addEventListener('submit', e => {
+  e.preventDefault();
+
+  const name = form.name.value.trim();
+  const email = form.email.value.trim();
+  const phone = form.phone.value.trim();
+
+  if (name && email && phone) {
+    const submissions = JSON.parse(localStorage.getItem('demoClassSubmissions') || '[]');
+    submissions.push({ name, email, phone, date: new Date().toISOString() });
+    localStorage.setItem('demoClassSubmissions', JSON.stringify(submissions));
+
+    alert('Thank you for booking a demo class!');
+
+    form.reset();
+  } else {
+    alert('Please fill all fields');
+  }
+});
+
+
 
 
 
